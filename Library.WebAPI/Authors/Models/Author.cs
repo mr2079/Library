@@ -1,7 +1,4 @@
-﻿using Library.WebAPI.Abstractions;
-using Library.WebAPI.Books.Models;
-
-namespace Library.WebAPI.Authors.Models;
+﻿namespace Library.WebAPI.Authors.Models;
 
 public class Author : Entity
 {

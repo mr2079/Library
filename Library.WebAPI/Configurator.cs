@@ -1,4 +1,8 @@
-﻿using Library.WebAPI.Persistence;
+﻿using Library.WebAPI.Authors;
+using Library.WebAPI.Authors.Abstractions;
+using Library.WebAPI.Books;
+using Library.WebAPI.Books.Abstractions;
+using Library.WebAPI.Persistence;
 using Microsoft.EntityFrameworkCore;
 
 namespace Library.WebAPI;
@@ -25,6 +29,9 @@ public static class Configurator
             sp.GetRequiredService<LibraryDbContext>());
 
         services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+
+        services.AddScoped<IBookRepository, BookRepository>();
+        services.AddScoped<IAuthorRepository, AuthorRepository>();
 
         return services;
     }

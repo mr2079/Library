@@ -1,6 +1,4 @@
-﻿using Library.WebAPI.Authors.Models;
-using Library.WebAPI.Books.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace Library.WebAPI.Persistence;
 
