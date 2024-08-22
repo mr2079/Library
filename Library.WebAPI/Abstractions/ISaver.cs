@@ -1,6 +1,6 @@
 ﻿namespace Library.WebAPI.Abstractions;
 
-public interface ISaveChanges
+public interface ISaver
 {
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }

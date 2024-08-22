@@ -19,7 +19,7 @@ public class Repository<TEntity>
         Entity = Context.Set<TEntity>();
     }
 
-    public async Task<IEnumerable<TEntity>> GetAllAsync(
+    public async Task<IEnumerable<TEntity>?> GetAllAsync(
         Expression<Func<TEntity, bool>>? condition = null,
         Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? includes = null,
         bool disableTracking = true,

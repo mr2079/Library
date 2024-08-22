@@ -22,10 +22,11 @@ public static class Configurator
 
         services.AddDbContext<LibraryDbContext>(options =>
         {
-            options.UseSqlServer(connectionString);
+            options.UseSqlServer(connectionString)
+                .AddInterceptors(new LibrarySaveChangesInterceptor());
         });
 
-        services.AddScoped<ISaveChanges>(sp =>
+        services.AddScoped<ISaver>(sp =>
             sp.GetRequiredService<LibraryDbContext>());
 
         services.AddScoped(typeof(IRepository<>), typeof(Repository<>));

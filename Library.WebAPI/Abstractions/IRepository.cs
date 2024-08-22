@@ -6,7 +6,7 @@ namespace Library.WebAPI.Abstractions;
 public interface IRepository<TEntity>
     where TEntity : Entity
 {
-    Task<IEnumerable<TEntity>> GetAllAsync(
+    Task<IEnumerable<TEntity>?> GetAllAsync(
         Expression<Func<TEntity, bool>>? condition = null,
         Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? includes = null,
         bool disableTracking = true,
