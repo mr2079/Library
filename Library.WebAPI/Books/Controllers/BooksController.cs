@@ -16,7 +16,7 @@ public class BooksController(
     ISender sender) : ControllerBase
 {
     [HttpGet]
-    public async Task<ActionResult<Response>> GetBooks(
+    public async Task<ActionResult<GetBooksResponse>> GetBooks(
         [FromQuery] GetBooksRequest request)
     {
         var query = request.Adapt<GetBooksQuery>();
@@ -29,7 +29,7 @@ public class BooksController(
     }
 
     [HttpGet("{id:guid}")]
-    public async Task<ActionResult<Response>> GetBookById(
+    public async Task<ActionResult<GetBookByIdResponse>> GetBookById(
         [FromRoute] GetBookByIdRequest request)
     {
         var query = request.Adapt<GetBookByIdQuery>();
@@ -42,7 +42,7 @@ public class BooksController(
     }
 
     [HttpPost]
-    public async Task<ActionResult<Response>> AddBook(
+    public async Task<ActionResult<AddBookResponse>> AddBook(
         [FromBody] AddBookRequest request)
     {
         var command = request.Adapt<AddBookCommand>();
@@ -55,7 +55,7 @@ public class BooksController(
     }
 
     [HttpPut("{id:guid}")]
-    public async Task<ActionResult<Response>> UpdateBook(
+    public async Task<ActionResult<UpdateBookResponse>> UpdateBook(
         [FromRoute] Guid id,
         [FromBody] UpdateBookRequest request)
     {
