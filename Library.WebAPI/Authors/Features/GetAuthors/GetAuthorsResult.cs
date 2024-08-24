@@ -1,6 +1,4 @@
-﻿using Library.WebAPI.Authors.Models.Entities;
-
-namespace Library.WebAPI.Authors.Features.GetAuthors;
+﻿namespace Library.WebAPI.Authors.Features.GetAuthors;
 
 public record GetAuthorsResult(
     bool Success,

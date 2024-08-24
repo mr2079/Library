@@ -1,5 +1,4 @@
 ﻿using Library.WebAPI.Authors.Abstractions;
-using Library.WebAPI.Authors.Models.Entities;
 using Mapster;
 
 namespace Library.WebAPI.Authors.Features.AddAuthor;

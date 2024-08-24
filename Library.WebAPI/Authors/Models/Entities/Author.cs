@@ -2,7 +2,7 @@
 
 public class Author : Entity
 {
-    public required string Name { get; set; }
+    public string Name { get; set; }
 
     public ICollection<Book>? Books { get; set; }
 }

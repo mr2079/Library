@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Library.WebAPI.Persistence.Migrations
 {
     [DbContext(typeof(LibraryDbContext))]
-    [Migration("20240824203517_Initial")]
+    [Migration("20240824205255_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -42,7 +42,8 @@ namespace Library.WebAPI.Persistence.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.HasKey("Id");
 
@@ -68,11 +69,13 @@ namespace Library.WebAPI.Persistence.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<int>("PublishedYear")
+                        .HasMaxLength(4)
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.HasKey("Id");
 

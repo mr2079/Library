@@ -39,7 +39,8 @@ namespace Library.WebAPI.Persistence.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.HasKey("Id");
 
@@ -65,11 +66,13 @@ namespace Library.WebAPI.Persistence.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<int>("PublishedYear")
+                        .HasMaxLength(4)
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.HasKey("Id");
 
