@@ -45,6 +45,8 @@ public static class Configurator
     public static WebApplication UseMiddlewares(
         this WebApplication app)
     {
+        app.ApplyMigrations();
+
         if (app.Environment.IsDevelopment())
         {
             app.UseSwagger();
@@ -52,6 +54,18 @@ public static class Configurator
         }
 
         app.MapControllers();
+
+        return app;
+    }
+
+    public static IApplicationBuilder ApplyMigrations(
+        this IApplicationBuilder app)
+    {
+        using var scope = app.ApplicationServices.CreateScope();
+
+        using var dbContext = scope.ServiceProvider.GetRequiredService<LibraryDbContext>();
+
+        dbContext.Database.Migrate();
 
         return app;
     }
