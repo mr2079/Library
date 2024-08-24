@@ -28,11 +28,11 @@ public class BooksController(
         return Ok(response);
     }
 
-    [HttpGet("{id:guid}")]
+    [HttpGet("{id}")]
     public async Task<ActionResult<GetBookByIdResponse>> GetBookById(
-        [FromRoute] GetBookByIdRequest request)
+        [FromRoute] Guid id)
     {
-        var query = request.Adapt<GetBookByIdQuery>();
+        var query = new GetBookByIdQuery(id);
 
         var result = await sender.Send(query);
 
@@ -54,7 +54,7 @@ public class BooksController(
         return Ok(response);
     }
 
-    [HttpPut("{id:guid}")]
+    [HttpPut("{id}")]
     public async Task<ActionResult<UpdateBookResponse>> UpdateBook(
         [FromRoute] Guid id,
         [FromBody] UpdateBookRequest request)

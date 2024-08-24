@@ -42,7 +42,7 @@ public static class Configurator
         return services;
     }
 
-    public static WebApplication UseMiddlewares(
+    public static async Task<WebApplication> UseMiddlewares(
         this WebApplication app)
     {
         app.ApplyMigrations();
@@ -51,6 +51,8 @@ public static class Configurator
         {
             app.UseSwagger();
             app.UseSwaggerUI();
+
+            await app.SeedTestDataAsync();
         }
 
         app.MapControllers();

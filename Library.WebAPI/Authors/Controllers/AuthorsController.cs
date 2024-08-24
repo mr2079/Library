@@ -29,11 +29,11 @@ public class AuthorsController(
         return Ok(response);
     }
 
-    [HttpGet("{id:guid}")]
+    [HttpGet("{id}")]
     public async Task<ActionResult<GetAuthorByIdResponse>> GetAuthorById(
-        [FromRoute] GetAuthorByIdRequest request)
+        [FromRoute] Guid id)
     {
-        var query = request.Adapt<GetAuthorByIdQuery>();
+        var query = new GetAuthorByIdQuery(id);
 
         var result = await sender.Send(query);
 
@@ -42,7 +42,7 @@ public class AuthorsController(
         return Ok(response);
     }
 
-    [HttpGet("AuthorBooks/{id:guid}")]
+    [HttpGet("AuthorBooks/{id}")]
     public async Task<ActionResult<GetAuthorBooksResponse>> GetAuthorBooks(
         [FromRoute] Guid id,
         [FromQuery] int? page = null,
@@ -70,7 +70,7 @@ public class AuthorsController(
         return Ok(response);
     }
 
-    [HttpPut("{id:guid}")]
+    [HttpPut("{id}")]
     public async Task<ActionResult<UpdateAuthorResponse>> UpdateAuthor(
         [FromRoute] Guid id,
         [FromBody] UpdateAuthorRequest request)
