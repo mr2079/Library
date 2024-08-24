@@ -1,4 +1,4 @@
-﻿namespace Library.WebAPI.Authors.Features.GetAuthor;
+﻿namespace Library.WebAPI.Authors.Features.GetAuthorById;
 
 public record GetAuthorByIdResult(
     bool Success,
