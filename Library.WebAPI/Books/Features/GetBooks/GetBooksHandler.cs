@@ -14,8 +14,6 @@ public class GetBooksHandler(
         {
             var books = await bookRepository.GetAllAsync(
                 null,
-                null,
-                true,
                 query.Page,
                 query.Take);
 

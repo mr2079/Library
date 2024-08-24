@@ -14,8 +14,6 @@ public class GetBooksByAuthorIdHandler(
         {
             var books = await bookRepository.GetAllAsync(
                 b => Equals(b.AuthorId, query.AuthorId),
-                null,
-                true,
                 query.Page,
                 query.Take);
 

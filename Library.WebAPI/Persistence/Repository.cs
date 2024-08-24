@@ -21,16 +21,12 @@ public class Repository<TEntity>
 
     public async Task<IEnumerable<TEntity>?> GetAllAsync(
         Expression<Func<TEntity, bool>>? condition = null,
-        Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? includes = null,
-        bool disableTracking = true,
         int? page = null,
         int? take = null)
     {
         var query = Entity.AsQueryable();
 
-        if (disableTracking) query = query.AsNoTracking();
-
-        if (includes != null) query = includes(query);
+        query = query.AsNoTracking();
 
         if (condition != null) query = query.Where(condition);
 
@@ -45,15 +41,11 @@ public class Repository<TEntity>
     }
 
     public async Task<TEntity?> GetAsync(
-        Expression<Func<TEntity, bool>> condition,
-        Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? includes = null,
-        bool disableTracking = false)
+        Expression<Func<TEntity, bool>> condition)
     {
         var query = Entity.AsQueryable();
 
-        if (disableTracking) query = query.AsNoTracking();
-
-        if (includes != null) query = includes(query);
+        query = query.AsNoTracking();
 
         query = query.Where(condition);
 

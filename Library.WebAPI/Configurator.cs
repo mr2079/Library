@@ -18,6 +18,11 @@ public static class Configurator
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
 
+        services.AddMediatR(config =>
+        {
+            config.RegisterServicesFromAssembly(typeof(Configurator).Assembly);
+        });
+
         var connectionString = configuration.GetConnectionString("SqlServer");
 
         services.AddDbContext<LibraryDbContext>(options =>

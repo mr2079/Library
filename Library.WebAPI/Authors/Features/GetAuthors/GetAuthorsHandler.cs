@@ -14,8 +14,6 @@ public class GetAuthorsHandler(
         {
             var authors = await authorRepository.GetAllAsync(
                 null,
-                null,
-                true,
                 query.Page,
                 query.Take);
 
