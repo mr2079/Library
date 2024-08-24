@@ -1,4 +1,4 @@
-﻿namespace Library.WebAPI.Authors.Models;
+﻿namespace Library.WebAPI.Authors.Models.Entities;
 
 public class Author : Entity
 {

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Library.WebAPI.Authors.Models.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace Library.WebAPI.Persistence;
 

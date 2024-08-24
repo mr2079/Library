@@ -1,4 +1,4 @@
-﻿namespace Library.WebAPI.Controllers.Authors;
+﻿namespace Library.WebAPI.Authors.Models.Requests;
 
 public record GetAuthorsRequest(
     int? Page = null,

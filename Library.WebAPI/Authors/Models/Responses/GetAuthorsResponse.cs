@@ -1,4 +1,6 @@
-﻿namespace Library.WebAPI.Controllers.Authors;
+﻿using Library.WebAPI.Authors.Models.Entities;
+
+namespace Library.WebAPI.Authors.Models.Responses;
 
 public record GetAuthorsResponse(
     bool Success,

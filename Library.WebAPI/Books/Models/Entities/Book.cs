@@ -1,4 +1,6 @@
-﻿namespace Library.WebAPI.Books.Models;
+﻿using Library.WebAPI.Authors.Models.Entities;
+
+namespace Library.WebAPI.Books.Models.Entities;
 
 public class Book : Entity
 {

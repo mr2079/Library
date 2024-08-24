@@ -1,7 +1,7 @@
-﻿using Library.WebAPI.Authors;
-using Library.WebAPI.Authors.Abstractions;
-using Library.WebAPI.Books;
+﻿using Library.WebAPI.Authors.Abstractions;
+using Library.WebAPI.Authors.Repositories;
 using Library.WebAPI.Books.Abstractions;
+using Library.WebAPI.Books.Repositories;
 using Library.WebAPI.Persistence;
 using Microsoft.EntityFrameworkCore;
 
