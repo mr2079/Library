@@ -1,6 +1,8 @@
-﻿namespace Library.WebAPI.Authors.Models.Responses;
+﻿using Library.WebAPI.Books.Models.DTOs;
+
+namespace Library.WebAPI.Authors.Models.Responses;
 
 public record GetAuthorBooksResponse(
     bool Success,
     string? Message = null,
-    IReadOnlyList<Book>? Books = null) : Response(Success, Message);
+    IReadOnlyList<BookDto>? Books = null) : Response(Success, Message);
