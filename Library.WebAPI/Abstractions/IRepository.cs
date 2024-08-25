@@ -15,5 +15,4 @@ public interface IRepository<TEntity>
 
     Guid Create(TEntity entity);
     void Update(TEntity entity);
-    void Delete(TEntity entity);
 }

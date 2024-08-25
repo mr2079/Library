@@ -61,10 +61,4 @@ public class Repository<TEntity>
     {
         Context.Entry(entity).State = EntityState.Modified;
     }
-
-    public void Delete(TEntity entity)
-    {
-        entity.IsDeleted = true;
-        Context.Entry(entity).State = EntityState.Modified;
-    }
 }
