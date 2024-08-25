@@ -39,7 +39,7 @@ public static class SeedDataExtensions
                 author.Books.Add(new()
                 {
                     Title = faker.Lorem.Sentence(5),
-                    PublishedYear = faker.Date.PastDateOnly(10).Year
+                    PublishedYear = faker.Date.PastDateOnly(20).Year
                 });
             }
 
